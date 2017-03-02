@@ -88,7 +88,7 @@ BannerNew =""".....................................,.OOD8D88888...........,.....
                      .       ..$DNONDNMN$NNND$ODDN8ND8DD8N8DDD88?NDDD8DDNNDZ8$O....
 		     
 Use this Help Options >> python2 GmailUnlocked.py -h or '--help'                    """
-print BannerNew
+print verde+BannerNew
 #print BannerOld
 OlderZ ="""                                 +============================================+
                                  | ☤ [1] Testar Usando Uma Lista de Senhas!.. |
