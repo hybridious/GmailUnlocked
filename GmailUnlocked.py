@@ -85,16 +85,16 @@ BannerNew =""".....................................,.OOD8D88888...........,.....
                    8NNNNNND8ODN8NNNNNNNNNNDNNZZZ8NNNNND8DNNNN$8$7$NDNNNNNNNNNNDDDDDDOOOOZOZZO.
                     ...II.  ,O88NNDDDNO8NNMNNI8ODNDNN8O8DNDNND$IOODMDNDNNNNNNNDDO888DDDDDDD.
                      .       .ZZNN8D8NNDNDMND87NODONNZN88N8N88ZOIZNDNND8MNNO88DD+.7I7$7.
-                     .       ..$DNONDNMN$NNND$ODDN8ND8DD8N8DDD88?NDDD8DDNNDZ8$O...."""
+                     .       ..$DNONDNMN$NNND$ODDN8ND8DD8N8DDD88?NDDD8DDNNDZ8$O....
+		     
+Use this Help Options >> python2 GmailUnlocked.py -h or '--help'                    """
 print BannerNew
 #print BannerOld
-OlderZ ="""
-                                 +============================================+
+OlderZ ="""                                 +============================================+
                                  | ☤ [1] Testar Usando Uma Lista de Senhas!.. |
                                  +--------------------------------------------+
                                  | ☤ [2] Lista Com Emails e Senhas.. 🔫        |
-                                 +============================================+
-"""
+                                 +============================================+"""
 
 def help():
    #print (cyanClaro+ Audio)
