@@ -102,7 +102,7 @@ def help():
    print(verde+'Modo de uso:')
    print(verde+'$ python2 GmailUnlocked.py\n')
    print(verde+'Example > [1] email > Wordlist.txt')
-   print(verde+'Example > [2] Phantasm_Lab@gmail.com|PhantasmLab')
+   print(verde+'Example > [2] Phantasm_Lab@gmail.com:PhantasmLab')
    print"Nota > Na opção 2 as listas de emails e senhas deveram conter o seguinte separador ""|""\nComo podemos ver no Exemplo há cima...."  
 print(' ')
 try:
